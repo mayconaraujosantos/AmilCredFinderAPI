@@ -1,0 +1,43 @@
+# Kotlin/Gradle
+/build/
+/.gradle/
+.gradle/
+/out/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test/coverage
+/test-results/
+/coverage/
+
+# Application
+*.jar
+*.war
+*.ear
+
+# Environment
+.env
+
+# Kotlin specific
+*.class
+
+# Others
+*.swp
+*.swo
+
+# Ignore trash/backup folders
+.trash/

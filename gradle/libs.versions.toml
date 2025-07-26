@@ -1,0 +1,75 @@
+# libs.versions.toml
+# Este arquivo centraliza as versões e as dependências para o seu projeto Gradle.
+# Para usar, adicione `enableFeaturePreview("VERSION_CATALOGS")` ao settings.gradle.kts
+# e referencie as dependências usando `libs.<nome_da_biblioteca>` no build.gradle.kts.
+
+[versions]
+# Versões do Kotlin e plugins
+kotlin = "2.0.0"
+kotlinSerialization = "1.7.1" # Versão do kotlinx-serialization-json
+kotlinCoroutines = "1.8.0"    # Versão do kotlinx-coroutines-core
+mappie = "1.0.0"
+detekt = "1.23.6"
+ktlint = "12.1.1"
+
+# Versões de bibliotecas
+logback = "1.5.7"
+kotlinLogging = "3.0.5"
+typesafeConfig = "1.4.3"
+ktor = "2.3.7"
+javalin = "6.1.0"
+jacksonKotlin = "2.17.2"
+mockk = "1.13.11"
+junit = "5.11.0"
+mockitoKotlin = "5.2.1"
+assertj = "3.26.0"
+
+[libraries]
+# Kotlin
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinCoroutines" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinSerialization" }
+
+# Logging
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+kotlin-logging-jvm = { module = "io.github.microutils:kotlin-logging-jvm", version.ref = "kotlinLogging" }
+
+# Configuração
+typesafe-config = { module = "com.typesafe:config", version.ref = "typesafeConfig" }
+
+# Ktor Client
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization-jackson = { module = "io.ktor:ktor-serialization-jackson", version.ref = "ktor" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+ktor-client-cookies = { module = "io.ktor:ktor-client-cookies", version.ref = "ktor" }
+# ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktor" } # Descomente se precisar
+
+# Web Framework
+javalin = { module = "io.javalin:javalin", version.ref = "javalin" }
+jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jacksonKotlin" }
+
+# Mapeamento
+mappie-api = { module = "tech.mappie:mappie-api", version.ref = "mappie" }
+
+# Testes
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
+junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlin" }
+assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj" }
+
+[plugins]
+# Plugins do Kotlin
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+# Outros plugins
+application = { id = "application" }                                      # Não tem versão explícita aqui, é um plugin padrão do Gradle
+mappie-plugin = { id = "tech.mappie.plugin", version.ref = "mappie" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
